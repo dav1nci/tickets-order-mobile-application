@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">TicketsOrder</string>
+    <string name="help">Help</string>
+    <string name="more_help">More Help</string>
+    <string name="even_more_help">Even more Help</string>
+    <string name="get_data">Get data</string>
+    <string name="welcome">Welcome to transport ships company!</string>
+    <string name="footer">© All rights reserved. Powered by dav1nci</string>
+    <string name="buy_tickets">Buy tickets</string>
+    <string name="reserve_tickets">Reserve tickets</string>
+    <string name="attention">If you are going to transport goods only, leave this tab blank!</string>
+    <string name="name_surname">Name Surname</string>
+    <string name="passport">Passport</string>
+    <string name="birth_day">Birthday</string>
+    <string name="table">Table</string>
+    <string name="cabin">Cabin</string>
+    <string name="attention2">You may leave this fields empty.</string>
+    <string name="next">Next</string>
+    <string name="licence_plates">Licence Plates</string>
+    <string name="gouvernment">Gouvernment</string>
+    <string name="brand">Brand</string>
+    <string name="registration_complete">Your order is accepted!</string>
+    <string name="welcome_final">WELCOME!</string>
+    <string name="travel_date">Travel Date</string>
+    <string name="output_name">Name</string>
+    <string name="output_date">Date</string>
+    <string name="output_price">Price</string>
+    <string name="output_cabin">Cabin</string>
+    <string name="output_table">Table</string>
+    <string name="output_total_peoples">Total peoples</string>
+    <string name="output_total_profit_on_cars">Total profit on bought tickets</string>
+    <string name="output_total_profit_on_passengers">Total profit on ordered tickets</string>
+</resources>
