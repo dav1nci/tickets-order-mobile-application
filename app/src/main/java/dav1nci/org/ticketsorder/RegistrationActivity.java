@@ -2,10 +2,7 @@ package dav1nci.org.ticketsorder;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,13 +13,13 @@ import android.widget.TabHost;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 
-import dav1nci.org.ticketsorder.dbservice.DatabaseHandler;
-import dav1nci.org.ticketsorder.dbservice.entities.Auto;
-import dav1nci.org.ticketsorder.dbservice.entities.Passenger;
-import dav1nci.org.ticketsorder.dbservice.entities.Ticket;
+import dav1nci.org.ticketsorder.dbutil.DatabaseHandler;
+import dav1nci.org.ticketsorder.dbutil.ServerUtill;
+import dav1nci.org.ticketsorder.dbutil.entities.Auto;
+import dav1nci.org.ticketsorder.dbutil.entities.Passenger;
+import dav1nci.org.ticketsorder.dbutil.entities.Ticket;
 
 /**
  * Created by dav1nci on 02.12.15.
@@ -56,6 +53,9 @@ public class RegistrationActivity extends Activity implements View.OnClickListen
         birthDay.setOnFocusChangeListener(this);
         travelDate.setOnFocusChangeListener(this);
         setDateTimeFields();
+
+
+
         /*Log.d("IsBuy", String.valueOf(*//*Boolean.getBoolean(*//*getIntent().getStringExtra("isBuy")));*/
 
     }
@@ -119,7 +119,8 @@ public class RegistrationActivity extends Activity implements View.OnClickListen
             passenger = new Passenger();
             passenger.setNameSurname(nameSurname.getText().toString());
             passenger.setPassportSerial(nameSurname.getText().toString());
-            try {
+            try
+            {
                 passenger.setBirthDate(dateFormatter.parse(birthDay.getText().toString()));
                 ticket.setTravelDate(dateFormatter.parse(travelDate.getText().toString()));
             } catch (ParseException e){Log.d("EXCEPTION", "DATE PARSE EXCEPTION");}
@@ -145,12 +146,27 @@ public class RegistrationActivity extends Activity implements View.OnClickListen
         {
             countPriceForTicket(ticket);
             long ticketId = dbHandler.addTicket(ticket);
+            saveTicketOnServer(ticket);
             Intent intent = new Intent(RegistrationActivity.this, RegistrationComplete.class);
             intent.putExtra("ticket_id", ticketId);
             startActivity(intent);
             finish();
         }
         Log.d("NULL:::::::", String.valueOf(isEmptyPasenger()));
+    }
+
+    private void saveTicketOnServer(Ticket ticket)
+    {
+        ServerUtill serverUtill = new ServerUtill("192.168.100.105", 6666, ticket);
+        try
+        {
+            //waiting for thread stop
+            System.out.println("Wait for end of threads.");
+            serverUtill.t.join();
+        } catch (InterruptedException e)
+        {
+            System.out.println("Main thread has been crushed!!!");
+        }
     }
 
     private void countPriceForTicket(Ticket ticket)

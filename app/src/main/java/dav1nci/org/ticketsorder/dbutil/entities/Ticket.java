@@ -1,19 +1,27 @@
-package dav1nci.org.ticketsorder.dbservice.entities;
+package dav1nci.org.ticketsorder.dbutil.entities;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by dav1nci on 02.12.15.
  */
 public class Ticket
 {
+    private int id;
     private boolean isBuy;
     private Date travelDate;
     private Passenger passenger;
     private Auto auto;
     private double price;
     private double discount;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public boolean isBuy() {
         return isBuy;

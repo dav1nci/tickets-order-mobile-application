@@ -1,4 +1,6 @@
-package dav1nci.org.ticketsorder.dbservice.entities;
+package dav1nci.org.ticketsorder.dbutil.entities;
+
+import java.util.Date;
 
 /**
  * Created by dav1nci on 02.12.15.
@@ -9,6 +11,15 @@ public class Cabin
     private int amountOfSits;
     private double price;
     private int placesOccupied;
+    private Date date;
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public int getNumber() {
         return number;

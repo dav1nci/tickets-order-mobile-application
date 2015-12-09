@@ -1,4 +1,4 @@
-package dav1nci.org.ticketsorder.dbservice.entities;
+package dav1nci.org.ticketsorder.dbutil.entities;
 
 /**
  * Created by dav1nci on 02.12.15.
@@ -10,7 +10,7 @@ public class Auto
     private String brand;
     private double transportingCost;
     private Passenger driver;
-    private Ticket ticket;
+    private transient Ticket ticket;
 
     public String getLicencePlates() {
         return licencePlates;

@@ -1,27 +1,10 @@
 package dav1nci.org.ticketsorder;
 
-import android.app.ActionBar;
 import android.app.Activity;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.ContextMenu;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TabHost;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import dav1nci.org.ticketsorder.dbservice.DBServiceContract;
-import dav1nci.org.ticketsorder.dbservice.DatabaseHandler;
 
 public class MainActivity extends Activity
 {
@@ -48,6 +31,9 @@ public class MainActivity extends Activity
                 startNewActivity(false);
             }
         });
+
+
+
         /*DatabaseHandler dbService = new DatabaseHandler(getApplicationContext());
         final SQLiteDatabase database = dbService.getWritableDatabase();
 

@@ -1,7 +1,6 @@
-package dav1nci.org.ticketsorder.dbservice.entities;
+package dav1nci.org.ticketsorder.dbutil.entities;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by dav1nci on 02.12.15.
