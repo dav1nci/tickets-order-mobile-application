@@ -118,7 +118,7 @@ public class RegistrationActivity extends Activity implements View.OnClickListen
         {
             passenger = new Passenger();
             passenger.setNameSurname(nameSurname.getText().toString());
-            passenger.setPassportSerial(nameSurname.getText().toString());
+            passenger.setPassportSerial(passport.getText().toString());
             try
             {
                 passenger.setBirthDate(dateFormatter.parse(birthDay.getText().toString()));
@@ -152,7 +152,6 @@ public class RegistrationActivity extends Activity implements View.OnClickListen
             startActivity(intent);
             finish();
         }
-        Log.d("NULL:::::::", String.valueOf(isEmptyPasenger()));
     }
 
     private void saveTicketOnServer(Ticket ticket)

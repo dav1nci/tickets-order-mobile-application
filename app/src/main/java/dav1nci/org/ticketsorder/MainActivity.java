@@ -49,6 +49,11 @@ public class MainActivity extends Activity
         //finish();
     }
 
+    public void showStatistics(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, ShowStatisticsActivity.class);
+        startActivity(intent);
+    }
 }
 
 

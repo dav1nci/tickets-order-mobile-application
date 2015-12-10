@@ -5,12 +5,21 @@ package dav1nci.org.ticketsorder.dbutil.entities;
  */
 public class Auto
 {
+    private int id;
     private String licencePlates;
     private String gouvernment;
     private String brand;
     private double transportingCost;
     private Passenger driver;
     private transient Ticket ticket;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getLicencePlates() {
         return licencePlates;

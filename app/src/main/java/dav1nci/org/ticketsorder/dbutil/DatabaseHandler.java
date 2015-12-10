@@ -203,11 +203,12 @@ public class DatabaseHandler extends SQLiteOpenHelper implements IDatabaseHandle
                     if (placesOccupied < amountOfSits)
                     {
                         Cabin cabin = new Cabin();
+                        cabin.setId(id);
                         cabin.setNumber(cabinNumber);
                         cabin.setAmountOfSits(amountOfSits);
                         cabin.setPrice(price);
-                        cabin.setPlacesOccupied(placesOccupied);
                         db.execSQL("UPDATE cabins SET places_occupied = " + (placesOccupied + 1) + " WHERE id = " + id);
+                        cabin.setPlacesOccupied(placesOccupied + 1);
                         cursor.close();
                         db.close();
                         return cabin;
@@ -241,10 +242,11 @@ public class DatabaseHandler extends SQLiteOpenHelper implements IDatabaseHandle
                     if (placesOccupied < amountOfSits)
                     {
                         Table table = new Table();
+                        table.setId(id);
                         table.setNumber(tableNumber);
                         table.setAmountOfPlaces(amountOfSits);
-                        table.setPlacesOccupied(placesOccupied);
                         db.execSQL("UPDATE tables SET places_occupied = " + (placesOccupied + 1) + " WHERE id = " + id);
+                        table.setPlacesOccupied(placesOccupied + 1);
                         cursor.close();
                         db.close();
                         return table;

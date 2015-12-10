@@ -45,10 +45,13 @@ public class ServerUtill implements Runnable
             DataOutputStream out = new DataOutputStream(outputStream);
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             String ticketInJson = gson.toJson(ticket);
-            Log.d("JSOON::::::", ticketInJson);
+            Log.d("JSON::::::", ticketInJson);
+            out.writeUTF("saveTicket");
             out.writeUTF(ticketInJson);
             out.flush();
             String responce = in.readUTF();
+            in.close();
+            out.close();
             socket.close();
         }catch (Exception e)
         {

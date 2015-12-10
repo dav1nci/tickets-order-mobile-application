@@ -7,6 +7,7 @@ import java.util.Date;
  */
 public class Table
 {
+    private int id;
     private int number;
     private int amountOfPlaces;
     private int placesOccupied;
@@ -14,6 +15,14 @@ public class Table
 
     public Date getDate() {
         return date;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setDate(Date date) {

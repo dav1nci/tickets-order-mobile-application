@@ -7,6 +7,7 @@ import java.util.Date;
  */
 public class Cabin
 {
+    private int id;
     private int number;
     private int amountOfSits;
     private double price;
@@ -15,6 +16,14 @@ public class Cabin
 
     public Date getDate() {
         return date;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setDate(Date date) {

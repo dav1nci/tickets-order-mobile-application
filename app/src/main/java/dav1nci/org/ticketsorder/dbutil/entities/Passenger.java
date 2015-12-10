@@ -7,12 +7,21 @@ import java.util.Date;
  */
 public class Passenger
 {
+    private int id;
     private String passportSerial;
     private Cabin cabin;
     private String nameSurname;
     private Date birthDate;
     private Table table;
     private Auto auto;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getPassportSerial() {
         return passportSerial;
